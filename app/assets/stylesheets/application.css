@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body { padding-top: 60px; }
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle; border: none; }
+th { border-bottom: 1px solid #DDD; }
+
+.bg-primary {
+    background-color: rgba(228, 18, 210, 0.64)!important;
+}
+
+
+
+.well {
+    min-height: 10px;
+    padding: 60px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    background-color: rgba(228, 6, 241, 0.40);
+    border: 1px solid #e3e3e3;
+    border-radius: 30px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+
+.container1 {
+  background-image: url("/images/teeth_3.jpg");
+  background-size: 80px;
+}
+
+
+h1{
+
+font-size: 3.5rem;
+text-align: center;
+}
+
+.jumbotron {
+    
+}
+
+
+.container {
+    justify-content: center;
+}
+
+
+.row3 {
+    background-color: rgba(220, 20, 194, 0.08);
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+
+
+
+
+.row1 {
+    background-color: rgba(220, 20, 194, 0.29);
+    margin-right: -15px;
+    margin-left: -15px;
+}
+

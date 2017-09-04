@@ -1,0 +1,80 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">  
+<div class="col-md-4"></div>
+
+<div class="col-md-4">
+
+
+  <%= form.file_field :photo, id: :patient_photo %>
+  <label>
+  <%= form.check_box :remove_photo %>
+      Remove Photo
+  </label>    
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, id: :patient_full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_birth %>
+    <%= form.date_select :date_of_birth, id: :patient_date_of_birth, :start_year => 1900 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :patient_gender %>
+  </div>
+
+
+ <div class="field">
+    <%= form.label :id_type %>
+    <%= form.text_field :id_type, id: :patient_id_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_no %>
+    <%= form.text_field :id_no, id: :patient_id_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :patient_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_no %>
+    <%= form.text_field :phone_no, id: :patient_phone_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :history %>
+    <%= form.text_area :history, id: :patient_history %>
+  </div>
+
+  <div class="field">
+    <%= form.label :treatment %>
+    <%= form.text_area :treatment, id: :patient_treatment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <%= link_to 'Show', @patient %> |
+  <%= link_to 'Back', patients_path %>
+<% end %>
+</div>
+<div class="col-md-4"></div>
+

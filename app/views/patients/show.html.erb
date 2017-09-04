@@ -1,0 +1,105 @@
+
+
+    <p id="notice"><%= notice %></p>
+ <div class="container">
+  <p>
+  <div class="row3">
+    
+  
+
+  <h3>Patients Profile</h3>
+    <strong></strong>
+    <%= image_tag(@patient.photo_url, width: 100) if @patient.photo.present? %>
+  
+  </p>
+  <p>
+    <strong>Full name:</strong>
+    <%= @patient.full_name %>
+  </p>
+  <p>
+    <strong>Date of birth:</strong>
+    <%= @patient.date_of_birth %>
+  </p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @patient.gender %>
+  </p>
+
+
+  <p>
+    <strong>Id type:</strong>
+    <%= @patient.id_type %>
+  </p>
+ <p>
+  <strong>Id no:</strong>
+  <%= @patient.id_no %>
+ </p>
+
+ <p>
+   <strong>Address:</strong>
+   <%= @patient.address %>
+ </p>
+
+ <p>
+   <strong>Phone no:</strong>
+  <%= @patient.phone_no %>
+</p>
+ 
+
+<p>
+  <strong>History:</strong>
+  <%= @patient.history %>
+</p>
+
+
+
+<p>
+  <strong>Treatment:</strong>
+  <%= @patient.treatment %>
+</p>
+</div>
+
+
+<h3>Medications</h3>
+<div class="row">
+<div class="col-md-6">
+<% @medicines.each do |medicine| %>
+    <strong><%= medicine.med_name %></strong> - <%= medicine.dosage %> - <%= medicine.in_take %> - <%= medicine.date %>
+    <p><%= link_to 'Delete', medicine_path(medicine), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<% end %>
+</div>
+
+<div class="col-md-6">
+<%= render partial: 'medicines/form', locals: { medicine: @medicine } %>
+</div>
+</div>
+
+
+
+<h3>Procedures</h3>
+
+<div class="row">
+<div class="col-md-6">
+
+<% @procedures.each do |procedure| %>
+
+    <strong><%= procedure.proc_name %></strong> - <%= procedure.proc_date %> - <%= procedure.performed_by %>
+    <p><%= link_to 'Delete', procedure_path(procedure), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<% end %>
+</div>
+<div class="col-md-6">
+<%= render partial: 'procedures/form', locals: { procedure: @procedure } %>
+</div>
+</div>
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+
+</div>
+
+
+
+</div>

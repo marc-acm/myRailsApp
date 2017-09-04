@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  med_name: MyString
+  dosage: MyString
+  in_take: MyString
+  date: 2017-08-15
+
+two:
+  med_name: MyString
+  dosage: MyString
+  in_take: MyString
+  date: 2017-08-15

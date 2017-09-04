@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Procedure:</strong>
+  <%= @procedure.proc_name %>
+</p>
+
+<p>
+  <strong>Procedure Date:</strong>
+  <%= @procedure.proc_date %>
+</p>
+
+<p>
+  <strong>Performed By:</strong>
+  <%= @procedure.performed_by %>
+</p>
+
+<%= link_to 'Edit', edit_procedure_path(@procedure) %> |
+<%= link_to 'Back', patient_path(@patient) %>
+

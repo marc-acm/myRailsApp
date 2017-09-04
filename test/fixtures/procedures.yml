@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proc_name: MyString
+  proc_date: 2017-08-15
+  performed_by: MyString
+
+two:
+  proc_name: MyString
+  proc_date: 2017-08-15
+  performed_by: MyString

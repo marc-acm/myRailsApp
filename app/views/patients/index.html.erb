@@ -1,0 +1,65 @@
+  <p id="notice"><%= notice %></p>
+
+<div class="container">
+
+<h1>List of Patients</h1>
+
+<% @patients.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |patient| %>
+      <div class="col-md-4">
+        
+       
+        
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+
+
+
+<table class="table table-responsive">
+  <thead>
+    <tr  >
+      <th class="bg-warning">Full Name</th>
+      <th class="table-active">Date of Birth</th>
+      <th class="table-success">Gender</th>
+      <th class="table-danger">Id Type</th>
+      <th class="table-info">Id No</th>
+      <th class="bg-success">Address</th>
+      <th class="table-success">Phone No.</th>
+      <th class="table-warning" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <% @patients.each do |patient| %>
+    <% if user_signed_in? %>
+     <% if patient.user_id == current_user.id %>
+       <tr >
+        <td class="bg-warning"><%= link_to patient.full_name, patient %></td>
+        <td class="table-active"><%= patient.date_of_birth %></td>
+        <td class="table-success"><%= patient.gender %></td>
+        <td class="table-danger"><%= patient.id_type %></td>
+        <td class="table-info"><%= patient.id_no %></td>
+        <td class="bg-success"><%= patient.address %></td>
+        <td class="table-success"><%= patient.phone_no %></td>
+        <td class="table-warning"><%= link_to 'Show', patient %></td>
+        <td class="table-warning"><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td class="table-warning"><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+   <% end %> 
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
+
+</div>
