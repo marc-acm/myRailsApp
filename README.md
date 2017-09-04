@@ -50,7 +50,7 @@ This is app is still under development.  Further studies and research are needed
 
 Targeted Additional Features:
  
- - Info sharing between dentists with collaborative work.
+ - Sharing of Patients Info between Dentists with collaborative work.
  - Patients to be able to access and view their medical records with permission from their dentist.
  - Ability to set an Appointment.
   
